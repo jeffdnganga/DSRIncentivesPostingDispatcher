@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1130.4,9792.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1130.4,7746.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -148,7 +148,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="790.4,9728" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="790.4,7681.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedPdfText" />
       <Variable x:TypeArguments="sd2:DataTable" Name="dt_invoiceDetails" />
@@ -179,6 +179,7 @@
       <Variable x:TypeArguments="scg:List(x:String)" Name="missingDataList" />
       <Variable x:TypeArguments="x:String" Name="invoiceComment" />
       <Variable x:TypeArguments="x:String" Name="fileLink" />
+      <Variable x:TypeArguments="x:String" Name="mpesaNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -213,7 +214,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ucas:DownloadStorageFile>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Extract data from the Payout Sheet for processing." DisplayName="Excel Process Scope (Extract Data from Payout Sheet)" sap:VirtualizedContainerService.HintSize="728,84" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Extract data from the Payout Sheet for processing." DisplayName="Excel Process Scope (Extract Data from Payout Sheet)" sap:VirtualizedContainerService.HintSize="728,96.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
@@ -253,14 +254,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create a data table to store the extracted data from the invoices." DataTable="[dt_invoiceDetails]" DisplayName="Build Invoice Details Data Table " sap:VirtualizedContainerService.HintSize="728,104" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_File&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Payee_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;KRA_x0020_PIN&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Payout_x0020_Sheet_x0020_Amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Tax&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Amount_x0020_OK_x003F_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Comment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create a data table to store the extracted data from the invoices." DataTable="[dt_invoiceDetails]" DisplayName="Build Invoice Details Data Table " sap:VirtualizedContainerService.HintSize="728,104" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_File&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Payee_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;KRA_x0020_PIN&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Payout_x0020_Sheet_x0020_Amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Tax&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Amount_x0020_OK_x003F_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Mpesa_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Comment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ForEachFileX sap2010:Annotation.AnnotationText="Iterate through each file in the 'Mail Attachments' folder for processing." DisplayName="For Each File in 'Mail Attachments' Folder" Folder="[mailAttachmentsFolder]" sap:VirtualizedContainerService.HintSize="728,7241.6" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX sap2010:Annotation.AnnotationText="Iterate through each file in the 'Mail Attachments' folder for processing." DisplayName="For Each File in 'Mail Attachments' Folder" Folder="[mailAttachmentsFolder]" sap:VirtualizedContainerService.HintSize="728,5182.4" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -269,7 +270,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="694.4,6947.2" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="694.4,4888" sap2010:WorkflowViewState.IdRef="Sequence_45">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
               <Variable x:TypeArguments="x:Boolean" Name="pinFound" />
@@ -395,7 +396,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <If Condition="[missingData]" DisplayName="If Extract PDF Text Failed" sap:VirtualizedContainerService.HintSize="632,1413.6" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[missingData]" DisplayName="If Extract PDF Text Failed" sap:VirtualizedContainerService.HintSize="632,183.2" sap2010:WorkflowViewState.IdRef="If_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -562,7 +563,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[missingData]" DisplayName="If OCR Also Failed" sap:VirtualizedContainerService.HintSize="632,3121.6" sap2010:WorkflowViewState.IdRef="If_11">
+            <If Condition="[missingData]" DisplayName="If OCR Also Failed" sap:VirtualizedContainerService.HintSize="632,2292.8" sap2010:WorkflowViewState.IdRef="If_11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -570,7 +571,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="521.6,923.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <Sequence sap:VirtualizedContainerService.HintSize="521.6,969.6" sap2010:WorkflowViewState.IdRef="Sequence_50">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -664,9 +665,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEach>
-                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign:&#xA;- Confirmed Invoice Amount as an empty string.&#xA;- Amount validation as an empty string." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign:&#xA;- Confirmed Invoice Amount as &quot;Not Found&quot;.&#xA;- Amount validation as &quot;Not compared&quot;.&#xD;&#xA;- Mpesa number as &quot;Not Found&quot;." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,286.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
                     <ui:MultipleAssign.AssignOperations>
-                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_100">
                           <ui:AssignOperation.To>
                             <OutArgument x:TypeArguments="x:String">[confirmedInvoiceAmount]</OutArgument>
@@ -681,6 +682,14 @@
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
                             <InArgument x:TypeArguments="x:String">Not compared</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_113">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[mpesaNumber]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">Not Found</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_110">
@@ -704,7 +713,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="598.4,2015.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                <Sequence sap:VirtualizedContainerService.HintSize="598.4,2109.6" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -720,7 +729,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LookupDataTable>
-                  <If Condition="[foundRowIndex = -1]" DisplayName="If KRA PIN is not found" sap:VirtualizedContainerService.HintSize="555.2,1364" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If Condition="[foundRowIndex = -1]" DisplayName="If KRA PIN is not found" sap:VirtualizedContainerService.HintSize="555.2,1458.4" sap2010:WorkflowViewState.IdRef="If_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -728,14 +737,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="521.6,558.4" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                      <Sequence sap:VirtualizedContainerService.HintSize="521.6,622.4" sap2010:WorkflowViewState.IdRef="Sequence_51">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message (PIN not found)" sap:VirtualizedContainerService.HintSize="478.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;KRA PIN not found!&quot;]" />
-                        <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign the following values:&#xA;- PIN Found as False&#xA;- The confirmed invoice amount&#xA;- The result of the amount validation" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,286.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
+                        <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign the following values:&#xA;- PIN Found as False&#xA;- The confirmed invoice amount as &quot;Not Found&quot;&#xA;- The result of the amount validation as &quot;Not compared&quot;&#xD;&#xA;- Mpesa number as &quot;Not Found&quot;&#xD;&#xA;- Invoice comment." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,350.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_102">
@@ -762,6 +771,14 @@
                                   <InArgument x:TypeArguments="x:String">Not compared</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_114">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[mpesaNumber]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">Not found</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_111">
                                 <ui:AssignOperation.To>
                                   <OutArgument x:TypeArguments="x:String">[invoiceComment]</OutArgument>
@@ -783,7 +800,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="521.6,622.4" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                      <Sequence sap:VirtualizedContainerService.HintSize="521.6,652.8" sap2010:WorkflowViewState.IdRef="Sequence_47">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Double" Name="amountDifference" />
                         </Sequence.Variables>
@@ -793,7 +810,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message (PIN found)" sap:VirtualizedContainerService.HintSize="478.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;KRA PIN found!&quot;]" />
-                        <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign:&#xA;- PIN Found (True)&#xA;- Confirmed Invoice Amount&#xA;- Difference&#xA;- Decision to Post&#xA;- Comment" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,350.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
+                        <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign:&#xA;- PIN Found (True)&#xA;- Confirmed Invoice Amount&#xA;- Amount Difference&#xD;&#xA;- Mpesa number&#xA;- Invoice Comment" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,380.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_105">
@@ -826,6 +843,14 @@
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
                                   <InArgument x:TypeArguments="x:String">[If(amountDifference &lt;= 1 And amountDifference &gt;= -1, "Yes", "No")]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_115">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[mpesaNumber]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(dt_confirmedRecepients.Rows(foundRowIndex).Item("MPESANumber").ToString), "Not provided", dt_confirmedRecepients.Rows(foundRowIndex).Item("MPESANumber").ToString)]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_112">
@@ -904,7 +929,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
             </Sequence>
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileLink, InvoiceNo, InvoiceFrom, PIN, InvoiceDate, InvoiceDescription, confirmedInvoiceAmount, InvoiceTotal, InvoiceTax, amountValidation,invoiceComment}]" DataTable="[dt_invoiceDetails]" DisplayName="Add Data Row to Invoice Details Data Table" sap:VirtualizedContainerService.HintSize="632,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileLink, InvoiceNo, InvoiceFrom, PIN, InvoiceDate, InvoiceDescription, confirmedInvoiceAmount, InvoiceTotal, InvoiceTax, amountValidation,mpesaNumber,invoiceComment}]" DataTable="[dt_invoiceDetails]" DisplayName="Add Data Row to Invoice Details Data Table" sap:VirtualizedContainerService.HintSize="632,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
             <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice details to Queue." DisplayName="Add Invoice to Queue" FolderPath="Pwani/DSR Incentives" sap:VirtualizedContainerService.HintSize="632,225.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="DSR Incentives Direct Posting Queue">
               <ui:AddQueueItem.ItemInformation>
                 <InArgument x:TypeArguments="x:String" x:Key="Invoice Number">[InvoiceNo]</InArgument>
@@ -918,6 +943,7 @@
                 <InArgument x:TypeArguments="x:String" x:Key="Invoice Tax">[InvoiceTax]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Payout Sheet Amount">[confirmedInvoiceAmount]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Comment">[invoiceComment]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Mpesa Number">[mpesaNumber]</InArgument>
               </ui:AddQueueItem.ItemInformation>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
